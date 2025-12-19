@@ -1,0 +1,147 @@
+# 🤖✨ AI - Complete AI Chat System  
+
+A **full-stack AI-powered chat application** with:  
+⚡ Intelligent model selection  
+💬 Conversation management  
+🤖 Real-time responses using **local AI models via Ollama**  
+
+---
+
+## 📌 Prerequisites  
+- 🟢 Node.js (v18 or higher)  
+- 🐍 Python (v3.8 or higher)  
+- 🤖 Ollama (for local AI models)  
+- 🔥 Firebase account (for authentication)  
+
+---
+
+## ⚙️ 🚀 Installation & Setup (Single Flow)
+
+```bash
+###############################################
+# 🐍 STEP 1: Python Backend Setup
+###############################################
+
+# Create and activate virtual environment
+python -m venv venv
+source venv/bin/activate   # 🍏 Linux/Mac
+venv\Scripts\activate      # 🪟 Windows
+
+# Install Python dependencies
+pip install flask flask-cors python-dotenv requests
+
+# ▶️ Start Ollama service (keep running in Terminal 1)
+ollama serve
+
+
+###############################################
+# 🎨 STEP 2: Frontend Setup
+###############################################
+
+# Install Node.js dependencies
+npm install
+
+# Create environment configuration file
+echo "LOCAL_AI_HOST=localhost
+LOCAL_AI_PORT=5000
+NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id" > .env.local
+
+
+###############################################
+# 🚦 STEP 3: Start the Application
+###############################################
+
+# 🖥️ Terminal 1 - Ollama Service
+ollama serve
+
+# 🐍 Terminal 2 - Python Backend
+source venv/bin/activate   # 🍏 Linux/Mac
+venv\Scripts\activate      # 🪟 Windows
+python app.py
+
+# 🌐 Terminal 3 - Frontend
+npm run dev
+
+
+###############################################
+# 🌍 Access the Application
+###############################################
+
+# Open your browser and go to:
+👉 http://localhost:3000
+
+
+###############################################
+# 🔥 Firebase Configuration
+###############################################
+
+# 1️⃣ Create a Firebase project:
+🌐 https://console.firebase.google.com  
+
+# 2️⃣ Enable Authentication providers:
+📧 Email | 🟦 Google | 📱 Phone  
+
+# 3️⃣ Copy your Firebase config values into:
+📄 .env.local
+
+
+###############################################
+# ✨ Features
+###############################################
+
+🤖 Multi-Model AI Support  
+💬 Smart Conversation Management  
+🎨 Customizable UI Themes  
+🔐 User Authentication  
+⚡ Real-time Responses  
+📱 Responsive Design  
+
+
+###############################################
+# 🛠️ Support / Troubleshooting
+###############################################
+
+✅ Ensure Ollama is running  
+✅ Verify Python virtual environment is activated  
+✅ Check environment variables are correctly set  
+✅ Confirm ports 3000, 5000, and 11434 are free  
+
+
+###############################################
+# 🚀 Deployment Guide
+###############################################
+
+🌐 Option 1: Vercel (Frontend)
+--------------------------------
+- Push frontend ➡️ GitHub  
+- Connect GitHub repo to Vercel  
+- Add 🔑 env variables from `.env.local` in Vercel dashboard  
+- Deploy 🚀 and get hosted frontend URL  
+
+⚙️ Option 2: Render / Heroku (Backend)
+---------------------------------------
+- Push backend ➡️ GitHub  
+- Create service on Render/Heroku  
+- Add 🔑 env variables  
+- Ensure Ollama service is running on server  
+- Deploy 🛠️ backend API  
+
+☁️ Option 3: Local + Cloud Hybrid
+-----------------------------------
+- Host frontend on **Vercel**  
+- Run backend + Ollama **locally or on cloud VM**  
+- Update frontend API URLs 🔗 to your backend server  
+
+
+
+
+
+
+⚖️ License
+
+© 2025 Infrablitz. All rights reserved. 🌐 infrablitz.com
